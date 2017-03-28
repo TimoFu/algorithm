@@ -1,3 +1,4 @@
+package UnionFind;
 
 public class QuickFind {
 
