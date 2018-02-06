@@ -1,0 +1,45 @@
+Maximum Sum Subarray
+	- https://leetcode.com/problems/maximum-subarray/description/
+	- Very simple idea, if the previous sum is less than zero, no need to add it.
+
+Maximum Sum Subarray II (find two subarray that sum of them are the largest)
+	- http://www.lintcode.com/en/problem/maximum-subarray-ii/
+	- Forward find max, backWard find max
+
+Maximum product Subarray
+	- https://leetcode.com/problems/maximum-product-subarray/description/
+	- Keep track of both prefious Maximum and minimum
+
+--------------------------------------------------------------------------------------------
+-- When we caculate equals to K, we can use hashmap as it can find the desired sum quickly.
+--------------------------------------------------------------------------------------------
+Maximum Size Subarray Sum Equals k
+	https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/description/
+	- two solutions: prefixSum O(n^2) and hashMap O(n)
+
+Minimum-size-subarray-sum Larger than k
+	https://leetcode.com/problems/minimum-size-subarray-sum/description/
+	- two solutions: prefixSum O(n^2) and a two pointer;
+
+--------------------------------------------------------------------------------------------
+-- Count the number of subarray. 
+--------------------------------------------------------------------------------------------
+
+Subarray product less than K (count number of Subarray)
+	- https://leetcode.com/problems/subarray-product-less-than-k/description/
+	- Got all combinations Or use two pointer as the one calucate minimum-size-subarray-sum
+
+Subarray sum equals to K (count number of Subarray)
+	- https://leetcode.com/problems/subarray-sum-equals-k/description/
+	- prefixSum O(n^2) Or use hashMap (How ever here we need to remeber the hashmap is storing the count of the sum occurs)
+
+
+Maximum Average Subarray (given fixed length k)
+	- https://leetcode.com/problems/maximum-average-subarray-i/description/
+	- Sliding window
+
+Maximum Average Subarray (length > k)
+	- https://leetcode.com/problems/maximum-average-subarray-ii/description/
+	- prefixSum (TLE) OR Use binary search, the ans must be within the minValue and maxValue; 
+	then everytime if a sum of subarray - mid > 0, then means it the left can be mid;
+
