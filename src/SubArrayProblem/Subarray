@@ -2,9 +2,25 @@ Maximum Sum Subarray
 	- https://leetcode.com/problems/maximum-subarray/description/
 	- Very simple idea, if the previous sum is less than zero, no need to add it.
 
+Minimum Sum subarray
+	- http://www.lintcode.com/en/problem/minimum-subarray/
+	- Very simple idea, if the previous sum is more than zero, no need to add it.
+
+Continous Subarray Sum
+	- http://www.lintcode.com/en/problem/continuous-subarray-sum/
+	- Very simple idea, if the previous sum is more that zero, add it. However here need to record the start and end index. Keep a temp start and end, everytime we have the max, set start and end.
+
 Maximum Sum Subarray II (find two subarray that sum of them are the largest)
 	- http://www.lintcode.com/en/problem/maximum-subarray-ii/
-	- Forward find max, backWard find max
+	- Forward left to right find max, backWard right to left find max
+
+Maximum Subarray difference (find two subarray that differenc of them are the largest)
+	- http://www.lintcode.com/en/problem/maximum-subarray-difference/
+	- forward left to right find max and mini array, backWard right to left find max and min array
+
+Maximum sum subarray III (find k non-overlapping subarray that sum of them are the largest)
+	- http://www.lintcode.com/en/problem/maximum-subarray-iii/
+	- DP problem, summarized in DP questions.
 
 Maximum product Subarray
 	- https://leetcode.com/problems/maximum-product-subarray/description/
@@ -15,7 +31,7 @@ Maximum product Subarray
 --------------------------------------------------------------------------------------------
 Maximum Size Subarray Sum Equals k
 	https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/description/
-	- two solutions: prefixSum O(n^2) and hashMap O(n)
+	- two solutions: prefixS:um O(n^2) and hashMap O(n)
 
 Minimum-size-subarray-sum Larger than k
 	https://leetcode.com/problems/minimum-size-subarray-sum/description/
@@ -38,8 +54,11 @@ Maximum Average Subarray (given fixed length k)
 	- https://leetcode.com/problems/maximum-average-subarray-i/description/
 	- Sliding window
 
-Maximum Average Subarray (length > k)
+Maximum Average Subarray (length >= k)
 	- https://leetcode.com/problems/maximum-average-subarray-ii/description/
 	- prefixSum (TLE) OR Use binary search, the ans must be within the minValue and maxValue; 
 	then everytime if a sum of subarray - mid > 0, then means it the left can be mid;
 
+Maximum Sum subarray (length >= k)
+	- http://www.lintcode.com/en/problem/maximum-subarray-iv/#
+	- Use for loop, everytime keep the minPrefix and calculate the max of currentPrefix - minPrefix
