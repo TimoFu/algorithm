@@ -1,4 +1,4 @@
-package Trie;
+package Tree.Trie;
 
 import java.util.Map;
 import java.util.NavigableMap;
