@@ -1,0 +1,4 @@
+1. Assume have T1, T2 and T3 3 threads, how can you make sure T2 starts after T1, and T3 starts after T2.
+
+- Use join
+- Use lock
