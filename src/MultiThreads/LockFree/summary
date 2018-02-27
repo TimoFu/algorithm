@@ -1,0 +1,6 @@
+Blocking vs non-blocking;
+blocking means a thread will block others running.
+
+Lock-free stacks & linked list examples will be shown.
+
+A typical CAS(compare and swap) mechanism will be used that comparison and the write can be done atomically.
