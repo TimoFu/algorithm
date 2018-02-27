@@ -11,12 +11,12 @@ public class BST {
 
         // 3, 2, #, 1
         // pre-order traversal
-
+        return "";
     }
 
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
-
+        return null;
     }
 
 }
