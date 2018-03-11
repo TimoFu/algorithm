@@ -14,7 +14,7 @@ public class ProducerConsumer {
         cnt = 0;
 
         for (int i = 0; i < 3; i ++){
-            Producer p = pc.new Producer(buffer, i);
+            Producer p = pc.new Producer(buffer);
             p.start();
         }
 
@@ -23,13 +23,11 @@ public class ProducerConsumer {
 
     }
 
-    class Producer extends Thread {
+    class Consumer extends Thread {
         private BlockingQueue<String> queue;
-        private int producerId;
 
-        public Producer(BlockingQueue<String> queue, int producerId){
+        public Consumer(BlockingQueue<String> queue){
             this.queue = queue;
-            this.producerId = producerId;
         }
 
         @Override
@@ -37,7 +35,6 @@ public class ProducerConsumer {
             while (true){
                 try {
                     String obj = queue.take();
-                    System.out.println("Producer_" + producerId + " processed " + obj);
                     Thread.sleep(1000);
                 } catch (Exception e){
                     e.printStackTrace();
@@ -47,10 +44,10 @@ public class ProducerConsumer {
         }
     }
 
-    class Consumer extends Thread {
+    class Producer extends Thread {
         private BlockingQueue<String> queue;
 
-        public Consumer(BlockingQueue<String> queue){
+        public Producer(BlockingQueue<String> queue){
             this.queue = queue;
         }
 

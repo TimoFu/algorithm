@@ -7,18 +7,20 @@ public class SynchronizedExample {
 
     private static int cnt;
     private static List<String> buffer;
+    private static int limit;
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception{
         SynchronizedExample obj = new SynchronizedExample();
         buffer = new ArrayList<>();
         cnt = 0;
+        limit = 10;
         Thread p = new Thread(){
             @Override
             public void run(){
                 ProducerConsumer p = obj.new ProducerConsumer(buffer);
                 while (cnt < 30){
-                    p.produce("obj_" + cnt);
                     try{
+                        p.produce();
                         Thread.sleep(1);
                     }catch(Exception e){
                         e.printStackTrace();
@@ -55,8 +57,11 @@ public class SynchronizedExample {
             this.buffer = list;
         }
 
-        public void produce(String item){
+        public void produce() throws Exception{
             synchronized (this){
+                while (buffer.size() >= limit) {
+                    Thread.sleep(1000);
+                }
                 buffer.add("obj_" + cnt);
                 System.out.println("Add item_" + cnt);
             }
