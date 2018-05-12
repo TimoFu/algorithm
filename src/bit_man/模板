@@ -1,0 +1,9 @@
+
+bits: the bits we have;
+n: n=Math.pow(2,bits);
+// going to loop bit times
+while (bits -- > 0){
+  if ((n&1) == 1) do something;
+  else do something;
+  n >>= 1;
+}
